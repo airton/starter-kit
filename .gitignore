@@ -44,3 +44,9 @@ dist
 
 #mock db
 db.json
+
+#yarn
+*.lock
+
+# package.json
+*-lock.json
