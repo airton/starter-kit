@@ -4,7 +4,9 @@
   "description": "JavaScript development environment",
   "author": "Airton Vancin Junior",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "node app/server/index.js"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "6.16.0",
