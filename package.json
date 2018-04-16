@@ -5,7 +5,8 @@
   "author": "Airton Vancin Junior",
   "license": "MIT",
   "scripts": {
-    "start": "node app/server/index.js"
+    "start": "node server/index.js",
+    "nsp": "nsp check"
   },
   "dependencies": {},
   "devDependencies": {
