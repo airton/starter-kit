@@ -1,3 +1,4 @@
+import Logo from '../../components/Logo/index.js'
 import './index.styl'
 
 console.log('Page Home')

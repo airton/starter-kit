@@ -7,25 +7,25 @@ const path = require('path');
 const mode = 'development';
 
 const entry = () => {
-  return glob.sync("./src/pages/**/index.js")
+  const pages = glob.sync("./src/pages/**/index.js")
     .reduce((pages, page) => {
-
       // console.log('pages',pages)
-      console.log('page',page)
-
+      // console.log('page',page)
       const pageName = page.split('/')[3];
-
       const pageEntries = Object.assign(pages, {
-        [
-          pageName === 'home' ? pageName : `${pageName}/${pageName}`
+        [ pageName
         ]
         : page,
       });
 
       return pageEntries
-
     }, {});
+  return pages
 }
+
+// const entry = {
+//   entry: './src/index.js'
+// }
 
 console.log('------pageEntries------')
 console.log(entry())
@@ -40,7 +40,8 @@ const modules = {
     {
       test: /\.styl$/,
       use: [
-        'style-loader',
+        MiniCssExtractPlugin.loader,
+        // 'style-loader',
         'css-loader',
         'stylus-loader'
       ]
@@ -78,6 +79,7 @@ const config = {
   module: modules,
   plugins: plugins,
   devServer: server,
+  devtool: "source-map",
 }
 
 module.exports = (env, argv) => {
